@@ -5,8 +5,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Norbert Orzechowicz",
-            "email": "norbert@orzechowicz.pl"
+            "name": "Francisco Abayon",
+            "email": "franz.noyaba@gmail.com"
         }
     ],
     "autoload": {
@@ -19,9 +19,16 @@
             "": "tests"
         }
     },
+    "repositories":
+    [
+            {
+                "type": "vcs",
+                "url": "https://github.com/cocoytech/ApplicationInsights-PHP"
+            }
+    ],
     "require": {
         "php": "^7.1",
-        "microsoft/application-insights": "^0.4.5",
+        "microsoft/application-insights": "dev-master as 0.4.5",
         "guzzlehttp/guzzle": "^6.0",
         "psr/simple-cache": "^1.0",
         "psr/log": "^1.1"

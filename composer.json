@@ -23,7 +23,7 @@
     [
             {
                 "type": "vcs",
-                "url": "https://github.com/cocoytech/ApplicationInsights-PHP"
+                "url": "https://github.com/curlybytes/ApplicationInsights-PHP"
             }
     ],
     "require": {

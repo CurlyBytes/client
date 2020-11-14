@@ -1,6 +1,6 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace AppInsightsPHP\Client;
 
@@ -103,7 +103,7 @@ final class Client
         return $this->client->getChannel();
     }
 
-    public function trackPageView(string $name, string $url, int $duration = 0, array $properties = NULL, array $measurements = NULL): void
+    public function trackPageView(string $name, string $url, int $duration = 0, array $properties = null, array $measurements = null): void
     {
         if (!$this->configuration->isEnabled()) {
             return;
@@ -113,7 +113,7 @@ final class Client
         $this->client->trackPageView($name, $url, $duration, $properties, $measurements);
     }
 
-    public function trackMetric(string $name, float $value, int $type = NULL, int $count = NULL, float $min = NULL, float $max = NULL, float $stdDev = NULL, array $properties = NULL): void
+    public function trackMetric(string $name, float $value, int $type = null, int $count = null, float $min = null, float $max = null, float $stdDev = null, array $properties = null): void
     {
         if (!$this->configuration->isEnabled()) {
             return;
@@ -123,7 +123,7 @@ final class Client
         $this->client->trackMetric($name, $value, $type, $count, $min, $max, $stdDev, $properties);
     }
 
-    public function trackEvent(string $name, array $properties = NULL, array $measurements = NULL): void
+    public function trackEvent(string $name, array $properties = null, array $measurements = null): void
     {
         if (!$this->configuration->isEnabled()) {
             return;
@@ -133,7 +133,7 @@ final class Client
         $this->client->trackEvent($name, $properties, $measurements);
     }
 
-    public function trackMessage(string $message, int $severityLevel = NULL, array $properties = NULL): void
+    public function trackMessage(string $message, int $severityLevel = null, array $properties = null): void
     {
         if (!$this->configuration->isEnabled() || !$this->configuration->traces()->isEnabled()) {
             return;
@@ -143,7 +143,7 @@ final class Client
         $this->client->trackMessage($message, $severityLevel, $properties);
     }
 
-    public function trackRequest(string $name, string $url, int $startTime, int $durationInMilliseconds = 0, int $httpResponseCode = 200, bool $isSuccessful = true, array $properties = NULL, array $measurements = NULL): void
+    public function trackRequest(string $name, string $url, int $startTime, int $durationInMilliseconds = 0, int $httpResponseCode = 200, bool $isSuccessful = true, array $properties = null, array $measurements = null): void
     {
         if (!$this->configuration->isEnabled() || !$this->configuration->requests()->isEnabled()) {
             return;
@@ -162,7 +162,7 @@ final class Client
         return $this->client->beginRequest($name, $url, $startTime);
     }
 
-    public function endRequest(?Request_Data $request, int $durationInMilliseconds = 0, int $httpResponseCode = 200, bool $isSuccessful = true, array $properties = NULL, array $measurements = NULL): void
+    public function endRequest(?Request_Data $request, int $durationInMilliseconds = 0, int $httpResponseCode = 200, bool $isSuccessful = true, array $properties = null, array $measurements = null): void
     {
         if (!$this->configuration->isEnabled() || !$this->configuration->requests()->isEnabled()) {
             return;
@@ -172,7 +172,7 @@ final class Client
         $this->client->endRequest($request, $durationInMilliseconds, $httpResponseCode, $isSuccessful, $properties, $measurements);
     }
 
-    public function trackException(\Throwable $exception, array $properties = NULL, array $measurements = NULL): void
+    public function trackException(\Throwable $exception, array $properties = null, array $measurements = null): void
     {
         if (!$this->configuration->isEnabled() ||
             !$this->configuration->exceptions()->isEnabled() ||
@@ -185,7 +185,7 @@ final class Client
         $this->client->trackException($exception, $properties, $measurements);
     }
 
-    public function trackDependency(string $name, string $type = "", string $commandName = NULL, int $startTime = NULL, int $durationInMilliseconds = 0, bool $isSuccessful = true, int $resultCode = NULL, array $properties = NULL): void
+    public function trackDependency(string $name, string $type = "", string $commandName = null, int $startTime = null, int $durationInMilliseconds = 0, bool $isSuccessful = true, int $resultCode = null, array $properties = null): void
     {
         if (!$this->configuration->isEnabled() ||
             !$this->configuration->dependencies()->isEnabled() ||
